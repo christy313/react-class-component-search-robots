@@ -1,7 +1,16 @@
-import React, { Component } from "react";
+import React from "react";
+import CardList from "./CardList";
+import { robots } from "./robots";
+import SearchBox from "./SearchBox";
 
-export default class App extends Component {
-  render() {
-    return <div className="App"></div>;
-  }
-}
+const App = () => {
+  return (
+    <div>
+      <h1>Search Robots</h1>
+      <SearchBox></SearchBox>
+      <CardList robots={robots} />
+    </div>
+  );
+};
+
+export default App;
