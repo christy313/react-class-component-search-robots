@@ -25,22 +25,24 @@ export default class App extends Component {
 
   render() {
     const { robots, searchfield } = this.state;
-    const filterRobots = robots.filter((robot) => {
-      return robot.name.toLowerCase().includes(searchfield.toLowerCase());
-    });
-
-    return !robots.length ? (
-      <h1>Loading</h1>
-    ) : (
-      <div className="tc">
-        <h1>Search Robots</h1>
-        <SearchBox searchChange={this.onSearchChange} />
-        <Scroll>
-          <ErrorBoundary>
-            <CardList robots={filterRobots} />
-          </ErrorBoundary>
-        </Scroll>
-      </div>
+    const filteredRobots = robots.filter((robot) =>
+      robot.name.toLowerCase().includes(searchfield.toLowerCase())
     );
+
+    if (!robots.length) {
+      return <h1>Loading</h1>;
+    } else {
+      return (
+        <div className="tc">
+          <h1>Search Robots</h1>
+          <SearchBox searchChange={this.onSearchChange} />
+          <Scroll>
+            <ErrorBoundary>
+              <CardList robots={filteredRobots} />
+            </ErrorBoundary>
+          </Scroll>
+        </div>
+      );
+    }
   }
 }
