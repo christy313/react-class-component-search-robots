@@ -7,8 +7,9 @@ export default class ErrorBoundary extends Component {
       hasError: false,
     };
   }
+
   componentDidCatch(error, info) {
-    this.setState({ hadError: true });
+    this.setState({ hasError: true, errorInfo: info });
   }
 
   render() {
