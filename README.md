@@ -1,6 +1,31 @@
 # Summary
 
-This is a simple React class component app with search function.
+This is a simple React app with search function by using React class component to know React concept underneath the hood back in history.
+
+![](./demo-image/react-class-component-search-robots.gif)
+
+## Technologies
+
+1. [Tachyons CSS tool](https://tachyons.io/) 
+
+2. [{JSON} Placeholder](https://jsonplaceholder.typicode.com/)
+
+## File structure
+
+```
+.
+└── src
+    ├── components
+    │   ├── Card.js
+    │   ├── CardList.js
+    │   ├── ErrorBoundary.js
+    │   ├── Scroll.js
+    │   └── SearchBox.js
+    ├── containers
+    │   └── App.js
+    ├── index.css
+    └── index.js
+```
 
 ## Available Scripts
 
