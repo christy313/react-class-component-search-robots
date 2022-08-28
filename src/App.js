@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 import CardList from "./CardList";
-import { robots } from "./robots";
 import SearchBox from "./SearchBox";
 
 export default class App extends Component {
   constructor() {
     super();
     this.state = {
-      robots: robots,
+      robots: [],
       searchfield: "",
     };
   }
@@ -28,12 +27,17 @@ export default class App extends Component {
         .toLowerCase()
         .includes(this.state.searchfield.toLowerCase());
     });
-    return (
-      <div className="tc">
-        <h1>Search Robots</h1>
-        <SearchBox searchChange={this.onSearchChange} />
-        <CardList robots={filteredRobots} />
-      </div>
-    );
+
+    if (!this.state.robots.length) {
+      return <h1>Loading</h1>;
+    } else {
+      return (
+        <div className="tc">
+          <h1>Search Robots</h1>
+          <SearchBox searchChange={this.onSearchChange} />
+          <CardList robots={filteredRobots} />
+        </div>
+      );
+    }
   }
 }
