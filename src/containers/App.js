@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import CardList from "../components/CardList";
 import SearchBox from "../components/SearchBox";
 import Scroll from "../components/Scroll";
+import "tachyons";
 
 export default class App extends Component {
   constructor() {
@@ -23,13 +24,12 @@ export default class App extends Component {
   };
 
   render() {
-    const filteredRobots = this.state.robots.filter((robot) => {
-      return robot.name
-        .toLowerCase()
-        .includes(this.state.searchfield.toLowerCase());
+    const { robots, searchfield } = this.state;
+    const filteredRobots = robots.filter((robot) => {
+      return robot.name.toLowerCase().includes(searchfield.toLowerCase());
     });
 
-    if (!this.state.robots.length) {
+    if (!robots.length) {
       return <h1>Loading</h1>;
     } else {
       return (
