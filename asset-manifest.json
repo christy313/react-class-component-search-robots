@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-class-component-search-robots/static/css/main.fbdd8f4a.css",
+    "main.js": "/react-class-component-search-robots/static/js/main.9c397e40.js",
+    "index.html": "/react-class-component-search-robots/index.html",
+    "main.fbdd8f4a.css.map": "/react-class-component-search-robots/static/css/main.fbdd8f4a.css.map",
+    "main.9c397e40.js.map": "/react-class-component-search-robots/static/js/main.9c397e40.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fbdd8f4a.css",
+    "static/js/main.9c397e40.js"
+  ]
+}
