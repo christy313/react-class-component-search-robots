@@ -26,9 +26,10 @@ export default class App extends Component {
 
   render() {
     const { robots, searchfield } = this.state;
-    const filteredRobots = robots.filter((robot) => {
-      return robot.name.toLowerCase().includes(searchfield.toLowerCase());
-    });
+
+    const filteredRobots = robots.filter((robot) =>
+      robot.name.toLowerCase().includes(searchfield.toLowerCase())
+    );
 
     if (!robots.length) {
       return <h1>Loading</h1>;
