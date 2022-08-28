@@ -29,16 +29,21 @@ export default class App extends Component {
     const filteredRobots = robots.filter((robot) => {
       return robot.name.toLowerCase().includes(searchfield.toLowerCase());
     });
-    return (
-      <div className="tc">
-        <h1>Search Robots</h1>
-        <SearchBox SearchChange={this.onSearchChange} />
-        <Scroll>
-          <ErrorBoundary>
-            <CardList robots={filteredRobots} />
-          </ErrorBoundary>
-        </Scroll>
-      </div>
-    );
+
+    if (!robots.length) {
+      return <h1>Loading</h1>;
+    } else {
+      return (
+        <div className="tc">
+          <h1>Search Robots</h1>
+          <SearchBox SearchChange={this.onSearchChange} />
+          <Scroll>
+            <ErrorBoundary>
+              <CardList robots={filteredRobots} />
+            </ErrorBoundary>
+          </Scroll>
+        </div>
+      );
+    }
   }
 }
