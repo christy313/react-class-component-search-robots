@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import CardList from "../components/CardList";
-import "tachyons";
 import SearchBox from "../components/SearchBox";
 import Scroll from "../components/Scroll";
 import ErrorBoundary from "../components/ErrorBoundary";
+import "tachyons";
 
 export default class App extends Component {
   constructor() {
@@ -26,7 +26,6 @@ export default class App extends Component {
 
   render() {
     const { robots, searchfield } = this.state;
-
     const filteredRobots = robots.filter((robot) =>
       robot.name.toLowerCase().includes(searchfield.toLowerCase())
     );
