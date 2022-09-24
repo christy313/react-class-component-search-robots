@@ -2,7 +2,7 @@
 
 This is a simple React app with search function by using React class component to know React concept underneath the hood back in history.
 
-[Search robots demo here](https://christy313.github.io/react-class-component-search-robots/)
+[Live Demo](https://christy313.github.io/react-class-component-search-robots/)
 
 ![](./demo-image/react-class-component-search-robots.gif)
 
